@@ -1,7 +1,7 @@
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-var redis = require('redis');
+var redis = require('ioredis');
 
 server.listen(8890);
 
@@ -16,9 +16,16 @@ io.on('connection', function (socket) {
   redisClient.subscribe('message');
 
   redisClient.on("message", function(channel, message) {
-    console.log("mew message in queue "+ message + "channel");
+    console.log("MESSGAE :  "+ message + "");
     socket.emit(channel, message);
+
+
+    /*redisClient.lpush('messages', JSON.stringify(message));
+    redisClient.ltrim('messages', 0, 99);*/
   });
+
+
+   
 
   socket.on('disconnect', function() {
     redisClient.quit();

@@ -1,0 +1,66 @@
+<style>
+html, body { height:100%; background-color:#F4F4F4; }
+.container {
+  position: relative;
+	width: 100%;
+	height: 0;
+	padding-top: 100%;
+}
+.triangle {
+  position:absolute;
+  width:80%;
+  height:4%;
+  background-color:#A7434F;
+  transform:skewX(-30deg);
+  left:10%;
+  top:8%;  
+}
+.triangle:before, .triangle:after {
+  content:'';
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;   
+}
+.triangle:before { 
+  background-color:#F87839;
+  transform-origin:left center;
+  /* Fix skew from parent, rotate, skew, fix small error */
+  transform:skewX(30deg) rotate(60deg) skewX(-30deg) translateX(2.8%) translateY(-1%);
+}
+.triangle:after {
+  background-color:#ED4B34;
+  transform-origin:right center;
+  /* Fix skew from parent, rotate, skew, fix small error */
+  transform:skewX(30deg) rotate(-60deg) skewX(-30deg) translateY(48%) translateX(2.8%);
+}
+
+.smaller { /* Approximate values for smaller triangles */
+  width:50%;
+  left:25%;
+  top:15%;
+}
+.smaller:before { 
+  transform:skewX(30deg) rotate(60deg) skewX(-30deg) translateX(4.4%) translateY(-1%);
+}
+.smaller:after {
+  transform:skewX(30deg) rotate(-60deg) skewX(-30deg) translateY(48%) translateX(4.7%);
+}
+.smallest {
+  width:20%;
+  left:40%;
+  top:23%;
+}
+.smallest:before { 
+  transform:skewX(30deg) rotate(60deg) skewX(-30deg) translateX(11.6%) translateY(-1%);
+}
+.smallest:after {
+  transform:skewX(30deg) rotate(-60deg) skewX(-30deg) translateY(49%) translateX(11.5%);
+}
+</style>
+<div class="container">
+  <div class="triangle"></div>
+  <div class="triangle smaller"></div>
+  <div class="triangle smallest"></div>
+</div>
