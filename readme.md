@@ -21,6 +21,99 @@ Thank you for considering contributing to the Laravel framework! The contributio
 ### License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
-# larasocket
-A realtime chat with in Laravel , Redis , Node.js and Socket.io
+Larasocket
+===================
+### INDEX
+
+
+[TOC]
+
+Chat application using **Laravel**, **Redis**, **socket.io** and **node js**
+
+----------
+
+
+ <i class="icon-cog"></i> Prerequisites
+-------------
+
+
+> **You need to have following installed:**
+
+> - ***Laravel***
+> - ***Redis***
+> you can check installation of ***Redis*** using `redis-cli monitor` or `redis-cli ping` command from your terminal The outputs of both commands would be **"OK"** and **"PONG"**
+> - ***nodejs***
+> you can check whether you have installed node on your machine by using **`node -v`** which outputs **"v10.0"** or something
+> - **socket.io**
+
+-------------
+
+<i class="icon-file"></i>Installation
+-------------
+
+You can clone repository using following git command
+><i class="icon-pencil"></i>git clone https://github.com/lakshmajim/larasocket.git
+
+or you can directly download the zip and move to your local repository from [Github](https://github.com/lakshmajim/larasocket) 
+
+#### <i class="icon-hdd"></i> do composer install
+><i class="icon-pencil"></i>composer install 
+
+#### <i class="icon-hdd"></i> migrate all tables
+><i class="icon-pencil"></i>php artisan migrate 
+
+#### <i class="icon-hdd"></i> setup **.env**  file
+><i class="icon-pencil"></i>
+>DB_HOST=HOST_NAME
+DB_DATABASE=DATABASE_NAME
+DB_USERNAME=DB_USERNAME
+DB_PASSWORD=DB_PASSWORD
+
+
+
+#### <i class="icon-hdd"></i> Start Redis
+><i class="icon-pencil"></i>redis-server 
+
+#### <i class="icon-hdd"></i> Start server.js
+><i class="icon-pencil"></i>
+>$ cd nodejs
+>
+$nodejs server.js 
+
+
+----------
+That's it
+
+<i class="icon-upload">Getting it to work!
+-------------------
+
+
+
+#### <i class="icon-refresh"></i> Open browser
+point url to 
+><i class="icon-pencil">localhost/larasocket/public/home/
+
+Here You will be redirected to Login page .Just click on register and login .Similarly open another browser and register with different user and login.Hooray!.Got it?? 
+
+
+
+
+
+
+
+----------
+
+
+Screen shots
+-------------
+
+
+
+
+
+
+
+
+
+
 
