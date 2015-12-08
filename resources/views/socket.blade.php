@@ -55,7 +55,7 @@
     </div>
     </div>
 </div>                
-<div class="lakshmaji_chat">hi
+<div class="lakshmaji_chat">
         <div class="col-md-12  col-md-offset-4">
             <div class="portlet portlet-default">
                 <div class="portlet-heading">
@@ -131,6 +131,7 @@
     <script>
         var socket = io.connect('http://localhost:8890');
 
+
         socket.on('message', function (data) {
 
             var json1   = $.parseJSON(data);
@@ -156,11 +157,23 @@
                                     
                                 });
                                 var objDiv = document.getElementById("chatwidget");
-objDiv.scrollTop = objDiv.scrollHeight;
+                                objDiv.scrollTop = objDiv.scrollHeight;
             
 
             //$( "#messages" ).append( "<p>"+data+"</p>" );
           });
+
+
+
+    socket.on('connect', function(msg){
+        abcd="{!!Auth::user()->name!!}";
+        socket.emit('join',abcd );
+    });
+    socket.on("disconnect", function(){
+        console.log("client disconnected from server");
+    });
+
+
 
     $(document).ready(function(){
 var objDiv = document.getElementById("chatwidget");

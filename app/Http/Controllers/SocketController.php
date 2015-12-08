@@ -7,6 +7,7 @@ use LRedis;
 use view;
 use Redirect;
 use Auth;
+use Session;
 
 class SocketController extends Controller {
 
@@ -22,7 +23,6 @@ class SocketController extends Controller {
 		$redis = LRedis::connection();
 		$todos = $redis->lrange('chathistory', -10,-1); 
 		return view('socket', ['todos' => $todos]);
-
 	}
 
 	public function writemessage()
@@ -49,7 +49,6 @@ class SocketController extends Controller {
 				return redirect('writemessage');*/
 				$redis = LRedis::connection();
 
-				
 				$a= $redis->publish('message', json_encode([
 		            'username'      => $user,
 		            'txt' => $txt,
